@@ -6,6 +6,7 @@ const path = require("path");
 const users = require("./routes/api/users");
 const app = express();
 require("dotenv").config();
+require("./config/keys");
 
 const port = process.env.PORT || 3001;
 
@@ -15,8 +16,6 @@ app.use(bodyParser.json());
 
 // DB Config
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/react-user-auth";
-
-const db = require("./config/keys").mongoURI;
 
 // Connect to MongoDB
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
