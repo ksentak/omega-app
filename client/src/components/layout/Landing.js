@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "./style.css";
 
 class Landing extends Component {
 	render() {
 		return (
-			<div className="container">
+			<div className="container col-12 m-0 p-0">
 				<div className="jumbotron jumbotron-fluid">
 					<h4 className="text-center">Build a React application with user authentication</h4>
 					<h6 className="text-center">via JWTs and passport</h6>
