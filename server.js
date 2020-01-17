@@ -3,28 +3,23 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const path = require("path");
-
 const users = require("./routes/api/users");
-
 const app = express();
+require("dotenv").config();
+
+const port = process.env.PORT || 3001;
 
 // Bodyparser middleware
-app.use(
-	bodyParser.urlencoded({
-		extended: false
-	})
-);
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 // DB Config
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/react-user-auth";
+
 const db = require("./config/keys").mongoURI;
 
 // Connect to MongoDB
-mongoose
-	.connect(
-		db,
-		{ useNewUrlParser: true, useUnifiedTopology: true }
-	)
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 	.then(() => console.log("MongoDB successfully connected"))
 	.catch(err => console.log(err));
 
@@ -46,8 +41,5 @@ if (process.env.NODE_ENV === "production") {
 
 	});
 }
-
-
-const port = process.env.PORT || 3001;
-
+ 
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
