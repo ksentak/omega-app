@@ -1,5 +1,7 @@
 .jumbotron {
 	background-color: #2a363b;
+	border: 3px solid #e84a5f;
+	margin-top: 20px;
 	color: white;
 	font-style: italic;
 }
@@ -7,7 +9,7 @@
 .registerButton {
 	background-color: #2a363b;
 	border: 1px solid #e84a5f;
-	color: #e84a5f;
+	color: white;
 	margin: 5px;
 }
 
@@ -20,7 +22,7 @@
 .loginButton {
 	background-color: #2a363b;
 	border: 1px solid #e84a5f;
-	color: #e84a5f;
+	color: white;
 	margin: 5px;
 }
 

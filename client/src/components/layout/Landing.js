@@ -6,7 +6,7 @@ class Landing extends Component {
 	render() {
 		return (
 			<div className="container col-12 m-0 p-0">
-				<div className="jumbotron jumbotron-fluid">
+				<div className="jumbotron jumbotron-fluid col-sm-10 offset-1">
 					<h2 className="text-center">Build a React application with user authentication</h2>
 					<h5 className="text-center">via JWTs and passport</h5>
 				</div>
