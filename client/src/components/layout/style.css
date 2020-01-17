@@ -1,0 +1,31 @@
+.jumbotron {
+	background-color: #2a363b;
+	color: white;
+	font-style: italic;
+}
+
+.registerButton {
+	background-color: #2a363b;
+	border: 1px solid #e84a5f;
+	color: #e84a5f;
+	margin: 5px;
+}
+
+.registerButton:hover {
+	background-color: white;
+	color:#e84a5f;
+	border: 1px solid #e84a5f;
+}
+
+.loginButton {
+	background-color: #2a363b;
+	border: 1px solid #e84a5f;
+	color: #e84a5f;
+	margin: 5px;
+}
+
+.loginButton:hover {
+	background-color: white;
+	color:#e84a5f;
+	border: 1px solid #e84a5f;
+}
