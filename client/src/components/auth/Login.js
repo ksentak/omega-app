@@ -67,7 +67,7 @@ class Login extends Component {
 						<form noValidate onSubmit={this.onSubmit}>
 							{/* Email */}
 							<div className="col-sm-8 offset-2">
-								<label htmlFor="email">Email</label>
+								<label htmlFor="email">Email:</label>
 								<span className="text-danger">{errors.email} {errors.emailnotfound}</span>
 								<input
 									type="email"
@@ -75,13 +75,16 @@ class Login extends Component {
 									value={this.state.email}
 									error={errors.email}
 									id="email"
-									className={classnames("", { invalid: errors.email || errors.emailnotfound })}
+									className={classnames("form-control", { 
+										invalid: errors.email || errors.emailnotfound 
+									})}
+									placeholder="Enter your email..."
 								/>
 							</div>
 
 							{/* Password */}
 							<div className="col-sm-8 offset-2">
-								<label htmlFor="password">Password</label>
+								<label htmlFor="password">Password:</label>
 								<span className="text-danger">{errors.password} {errors.passwordincorrect}</span>
 								<input
 									type="password"
@@ -89,9 +92,10 @@ class Login extends Component {
 									value={this.state.password}
 									error={errors.password}
 									id="password"
-									className={classnames("", {
+									className={classnames("form-control", {
 										invalid: errors.password || errors.passwordincorrect
 									})}
+									placeholder="Enter your password..."
 								/>
 							</div>
 
