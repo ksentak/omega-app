@@ -70,7 +70,7 @@ class Register extends Component {
 						<form noValidate onSubmit={this.onSubmit}>
 							{/* Name */}
 							<div className="col-sm-8 offset-2">
-								<label htmlFor="name">Name</label>
+								<label htmlFor="name">Name:</label>
 								<span className="text-danger">{errors.name}</span>
 								<input
 									type="text"
@@ -78,13 +78,14 @@ class Register extends Component {
 									value={this.state.name}
 									error={errors.name}
 									id="name"
-									className={classnames("", { invalid: errors.name })}
+									className={classnames("form-control", { invalid: errors.name })}
+									placeholder="Enter your name..."
 								/>
 							</div>
 
 							{/* Email */}
 							<div className="col-sm-8 offset-2">
-								<label htmlFor="email">Email</label>
+								<label htmlFor="email">Email:</label>
 								<span className="text-danger">{errors.email}</span>
 								<input
 									type="email"
@@ -92,13 +93,14 @@ class Register extends Component {
 									value={this.state.email}
 									error={errors.email}
 									id="email"
-									className={classnames("", { invalid: errors.email })}
+									className={classnames("form-control", { invalid: errors.email })}
+									placeholder="Enter your email..."
 								/>
 							</div>
 
 							{/* Password */}
 							<div className="col-sm-8 offset-2">
-								<label htmlFor="password">Password</label>
+								<label htmlFor="password">Password:</label>
 								<span className="text-danger">{errors.password}</span>
 								<input
 									type="password"
@@ -106,13 +108,14 @@ class Register extends Component {
 									value={this.state.password}
 									error={errors.password}
 									id="password"
-									className={classnames("", { invalid: errors.password })}
+									className={classnames("form-control", { invalid: errors.password })}
+									placeholder="Enter a password..."
 								/>
 							</div>
 
 							{/* Validate password */}
 							<div className="col-sm-8 offset-2">
-								<label htmlFor="password2">Confirm Password</label>
+								<label htmlFor="password2">Confirm Password:</label>
 								<span className="text-danger">{errors.password2}</span>
 								<input
 									type="password"
@@ -120,7 +123,8 @@ class Register extends Component {
 									value={this.state.password2}
 									error={errors.password2}
 									id="password2"
-									className={classnames("", { invalid: errors.password2 })}
+									className={classnames("form-control", { invalid: errors.password2 })}
+									placeholder="Confirm your password..."
 								/>
 							</div>
 
