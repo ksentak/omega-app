@@ -24,7 +24,8 @@ class Login extends Component {
 
 	componentWillReceiveProps(nextProps) {
 		if (nextProps.auth.isAuthenticated) {
-			this.props.history.push("/dashboard"); // push user to dashboard when they login
+			// Push user to dashboard when they login
+			this.props.history.push("/dashboard");
 		}
 		if (nextProps.errors) {
 			this.setState({
@@ -42,74 +43,63 @@ class Login extends Component {
 			email: this.state.email,
 			password: this.state.password
 		};
-		this.props.loginUser(userData); // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
+		this.props.loginUser(userData);
 	};
 	render() {
 		const { errors } = this.state;
 		return (
 			<div className="container">
-				<div style={{ marginTop: "4rem" }} className="row">
-					<div className="col-sm-10 offset-2">
-						<Link to="/" className="btn">
-							<i className="material">keyboard_backspace</i> Back to
-							home
-            </Link>
-						<div className="col-sm-12" style={{ paddingLeft: "11.250px" }}>
-							<h4>
-								<b>Login</b> below
-              </h4>
-							<p className="text-danger">
-								Don't have an account? <Link to="/register">Register</Link>
-							</p>
-						</div>
+				<div className="row">
+					<div className="col-sm-10 offset-1 text-center returnHome">
+						<Link to="/"><i class="fas fa-backspace"></i>Return Home</Link>
+					</div>
+				</div>
+
+				<div className="row">
+					<div className="col-sm-10 offset-1 text-center registerText">
+						<h3>Log In Below</h3>
+						<p>Don't have an account? <Link to="/register">Register</Link></p>
+					</div>
+				</div>
+
+				<div className="row">
+					<div className="col-sm-10 offset-1 text-center">
 						<form noValidate onSubmit={this.onSubmit}>
-							<div className="input-field col-sm-12">
+							{/* Email */}
+							<div className="col-sm-8 offset-2">
+								<label htmlFor="email">Email</label>
+								<span className="text-danger">{errors.email} {errors.emailnotfound}</span>
 								<input
+									type="email"
 									onChange={this.onChange}
 									value={this.state.email}
 									error={errors.email}
 									id="email"
-									type="email"
-									className={classnames("", {
-										invalid: errors.email || errors.emailnotfound
-									})}
+									className={classnames("", { invalid: errors.email || errors.emailnotfound })}
 								/>
-								<label htmlFor="email">Email</label>
-								<span className="red-text">
-									{errors.email}
-									{errors.emailnotfound}
-								</span>
 							</div>
-							<div className="input-field col-sm-12">
+
+							{/* Password */}
+							<div className="col-sm-8 offset-2">
+								<label htmlFor="password">Password</label>
+								<span className="text-danger">{errors.password} {errors.passwordincorrect}</span>
 								<input
+									type="password"
 									onChange={this.onChange}
 									value={this.state.password}
 									error={errors.password}
 									id="password"
-									type="password"
 									className={classnames("", {
 										invalid: errors.password || errors.passwordincorrect
 									})}
 								/>
-								<label htmlFor="password">Password</label>
-								<span className="red-text">
-									{errors.password}
-									{errors.passwordincorrect}
-								</span>
 							</div>
-							<div className="col s12" style={{ paddingLeft: "11.250px" }}>
-								<button
-									style={{
-										width: "150px",
-										borderRadius: "3px",
-										letterSpacing: "1.5px",
-										marginTop: "1rem"
-									}}
-									type="submit"
-									className="btn btn-large"
-								>
-									Login
-                </button>
+
+							{/* Submit button */}
+							<div className="col-sm-8 offset-2">
+								<button className="btn btn-danger" type="submit">
+									Log In
+			 	  				</button>
 							</div>
 						</form>
 					</div>
@@ -130,7 +120,4 @@ const mapStateToProps = state => ({
 	errors: state.errors
 });
 
-export default connect(
-	mapStateToProps,
-	{ loginUser }
-)(Login);
+export default connect(mapStateToProps, { loginUser })(Login);
