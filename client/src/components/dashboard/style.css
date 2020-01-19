@@ -1,0 +1,15 @@
+.dashboardText {
+	margin-top: 25px;
+	color: white;
+}
+
+.logoutbtn {
+	background-color: #e84a5f;
+	color: white;
+}
+
+.logoutbtn:hover {
+	background-color: white;
+	color:#e84a5f;
+	border: 1px solid #e84a5f;
+}
