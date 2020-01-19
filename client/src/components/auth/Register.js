@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
+import './Register.css';
+
 
 class Register extends Component {
 	constructor() {
@@ -53,15 +55,15 @@ class Register extends Component {
 		return (
 			<div className="container">
 				<div className="row">
-					<div className="col-sm-10 offset-1 text-center returnHome">
-						<Link to="/"><i class="fas fa-backspace"></i>Return Home</Link>
+					<div className="col-sm-3 returnHome">
+						<Link to="/" className="link"><i class="fas fa-backspace"></i> Return Home</Link>
 					</div>
 				</div>
 
 				<div className="row">
 					<div className="col-sm-10 offset-1 text-center registerText">
 						<h3>Register to become a new user</h3>
-						<p>Already have an account? <Link to="/login">Log In</Link></p>
+						<p>Already have an account? <Link to="/login" className="link">Log In</Link></p>
 					</div>
 				</div>
 
@@ -71,7 +73,7 @@ class Register extends Component {
 							{/* Name */}
 							<div className="col-sm-8 offset-2">
 								<label htmlFor="name">Name:</label>
-								<span className="text-danger">{errors.name}</span>
+								<span className="text-light">{errors.name}</span>
 								<input
 									type="text"
 									onChange={this.onChange}
@@ -86,7 +88,7 @@ class Register extends Component {
 							{/* Email */}
 							<div className="col-sm-8 offset-2">
 								<label htmlFor="email">Email:</label>
-								<span className="text-danger">{errors.email}</span>
+								<span className="text-light">{errors.email}</span>
 								<input
 									type="email"
 									onChange={this.onChange}
@@ -101,7 +103,7 @@ class Register extends Component {
 							{/* Password */}
 							<div className="col-sm-8 offset-2">
 								<label htmlFor="password">Password:</label>
-								<span className="text-danger">{errors.password}</span>
+								<span className="text-light">{errors.password}</span>
 								<input
 									type="password"
 									onChange={this.onChange}
@@ -116,7 +118,7 @@ class Register extends Component {
 							{/* Validate password */}
 							<div className="col-sm-8 offset-2">
 								<label htmlFor="password2">Confirm Password:</label>
-								<span className="text-danger">{errors.password2}</span>
+								<span className="text-light">{errors.password2}</span>
 								<input
 									type="password"
 									onChange={this.onChange}
@@ -124,13 +126,13 @@ class Register extends Component {
 									error={errors.password2}
 									id="password2"
 									className={classnames("form-control", { invalid: errors.password2 })}
-									placeholder="Confirm your password..."
+									placeholder="Re-type your password..."
 								/>
 							</div>
 
 							{/* Submit button */}
 							<div className="col-sm-8 offset-2">
-								<button className="btn btn-danger" type="submit">
+								<button className="btn signupbtn" type="submit">
 									Sign up
 			 	  				</button>
 							</div>

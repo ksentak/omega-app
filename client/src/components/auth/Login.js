@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
+import './Login.css';
+
 
 class Login extends Component {
 	constructor() {
@@ -50,15 +52,15 @@ class Login extends Component {
 		return (
 			<div className="container">
 				<div className="row">
-					<div className="col-sm-10 offset-1 text-center returnHome">
-						<Link to="/"><i class="fas fa-backspace"></i>Return Home</Link>
+					<div className="col-sm-3 returnHome">
+						<Link to="/" className="link"><i class="fas fa-backspace"></i> Return Home</Link>
 					</div>
 				</div>
 
 				<div className="row">
-					<div className="col-sm-10 offset-1 text-center registerText">
+					<div className="col-sm-10 offset-1 text-center loginText">
 						<h3>Log In Below</h3>
-						<p>Don't have an account? <Link to="/register">Register</Link></p>
+						<p>Don't have an account? <Link to="/register" className="link">Register</Link></p>
 					</div>
 				</div>
 
@@ -101,7 +103,7 @@ class Login extends Component {
 
 							{/* Submit button */}
 							<div className="col-sm-8 offset-2">
-								<button className="btn btn-danger" type="submit">
+								<button className="btn loginbtn" type="submit">
 									Log In
 			 	  				</button>
 							</div>

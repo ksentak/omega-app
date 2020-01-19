@@ -1,0 +1,36 @@
+.returnHome {
+	margin-top: 10px;
+}
+
+.loginText {
+	color: white;
+}
+
+.link {
+	color: #e84a5f;
+}
+
+.link:hover {
+	color: #e84a5f;
+	text-decoration: underline;
+}
+
+label {
+	color: #e84a5f;
+}
+
+.form-control {
+	margin-bottom: 10px;
+}
+
+.loginbtn {
+	margin: 10px;
+	background-color: #e84a5f;
+	color: white;
+}
+
+.loginbtn:hover {
+	background-color: white;
+	color: #e84a5f;
+	border: 1px solid #e84a5f;
+}
