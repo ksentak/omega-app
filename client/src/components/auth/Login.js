@@ -58,17 +58,17 @@ class Login extends Component {
 				</div>
 
 				<div className="row">
-					<div className="col-sm-10 offset-1 text-center loginText">
+					<div className="col-10 offset-1 text-center loginText">
 						<h3>Log In Below</h3>
 						<p>Don't have an account? <Link to="/register" className="link">Register</Link></p>
 					</div>
 				</div>
 
 				<div className="row">
-					<div className="col-sm-10 offset-1 text-center">
+					<div className="col-10 offset-1 text-center">
 						<form noValidate onSubmit={this.onSubmit}>
 							{/* Email */}
-							<div className="col-sm-8 offset-2">
+							<div className="col-8 offset-2">
 								<label htmlFor="email">Email:</label>
 								<span className="text-danger">{errors.email} {errors.emailnotfound}</span>
 								<input
@@ -85,7 +85,7 @@ class Login extends Component {
 							</div>
 
 							{/* Password */}
-							<div className="col-sm-8 offset-2">
+							<div className="col-8 offset-2">
 								<label htmlFor="password">Password:</label>
 								<span className="text-danger">{errors.password} {errors.passwordincorrect}</span>
 								<input
@@ -102,7 +102,7 @@ class Login extends Component {
 							</div>
 
 							{/* Submit button */}
-							<div className="col-sm-8 offset-2">
+							<div className="col-8 offset-2">
 								<button className="btn loginbtn" type="submit">
 									Log In
 			 	  				</button>

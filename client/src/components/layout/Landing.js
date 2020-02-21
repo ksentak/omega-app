@@ -5,10 +5,10 @@ import "./style.css";
 class Landing extends Component {
 	render() {
 		return (
-			<div className="container col-12 m-0 p-0">
-				<div className="jumbotron jumbotron-fluid col-sm-10 offset-1">
-					<h2 className="text-center">Build a React application with user authentication</h2>
-					<h5 className="text-center">via JWTs and passport</h5>
+			<div className="container col-12">
+				<div className="jumbotron jumbotron-fluid col-10 offset-1 text-center">
+					<h2>Build a React application with user authentication</h2>
+					<h5>via JWTs and passport</h5>
 				</div>
 
 				{/* Links to Register & Login */}
